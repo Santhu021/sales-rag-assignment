@@ -1,0 +1,6 @@
+langchain
+langchain-openai
+pinecone
+pypdf
+python-dotenv
+langchain-text-splitters

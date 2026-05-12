@@ -38,6 +38,12 @@ Retrieved Context
 ↓
 LLM Response Generation
 
+PDF → Text Chunking → OpenAI Embeddings → Pinecone Vector DB
+                                         ↓
+                                  Similarity Search
+                                         ↓
+                                  LLM Response
+
 
 ## Critical Retrieval Function
 

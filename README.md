@@ -22,21 +22,23 @@ The project demonstrates an understanding of modern AI application architecture 
 
 ## Architecture Flow
 
+```text
 PDF Documents
-↓
+      ↓
 PyPDF Text Extraction
-↓
+      ↓
 RecursiveCharacterTextSplitter
-↓
+      ↓
 OpenAI Embeddings
-↓
+      ↓
 Pinecone Vector Database
-↓
+      ↓
 Similarity Search
-↓
+      ↓
 Retrieved Context
-↓
+      ↓
 LLM Response Generation
+```
 
 PDF → Text Chunking → OpenAI Embeddings → Pinecone Vector DB
                                          ↓
@@ -109,6 +111,16 @@ To reduce hallucinations:
 - Retrieval is limited to top relevant chunks
 - The prompt explicitly asks the model to say “I don’t know” if context is insufficient
 
+## Scaling Bottleneck & Mitigation
+
+One potential scaling bottleneck is embedding and indexing large document collections, which can increase retrieval latency and API costs.
+
+To mitigate this:
+- Batch embedding generation can be implemented
+- Asynchronous ingestion pipelines can improve throughput
+- Metadata filtering can reduce unnecessary vector searches
+- Hybrid retrieval strategies can improve scalability and relevance
+
 
 ---
 
@@ -155,8 +167,6 @@ sales-rag-assignment/
 │   └── query.py
 
 ├── requirements.txt
-
-├── .env
 
 ├── .gitignore
 
